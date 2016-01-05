@@ -8,6 +8,8 @@
 (when (version<= emacs-version "24")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
+(put 'temporary-file-directory 'standard-value '((file-name-as-directory "/tmp")))
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-benchmarking) ;; Measure startup time
 
@@ -98,6 +100,10 @@
 (require 'init-ruby-mode)
 (require 'init-rails)
 (require 'init-sql)
+
+(require 'init-editor-config)
+(require 'init-crontab)
+(require 'init-restclient)
 
 (require 'init-paredit)
 (require 'init-lisp)

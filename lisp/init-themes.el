@@ -71,5 +71,9 @@ ignored: use `custom-enabled-themes' instead."
   (interactive)
   (color-theme-sanityinc-solarized-dark))
 
+(defun eighties ()
+  "Activate the eighties theme"
+  (interactive)
+  (color-theme-sanityinc-tomorrow-eighties))
 
 (provide 'init-themes)

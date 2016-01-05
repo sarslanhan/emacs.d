@@ -21,6 +21,18 @@
       org-export-kill-product-buffer-when-displayed t
       org-tags-column 80)
 
+(setq-default org-clock-clocktable-default-properties '(:scope subtree :maxlevel 20 :narrow 1000!))
+
+(defun my-org-clocktable-indent-string (level)
+  (if (= level 1)
+      ""
+    (let ((str "^"))
+      (while (> level 2)
+        (setq level (1- level)
+              str (concat str "--")))
+      (concat str "-> "))))
+
+(advice-add 'org-clocktable-indent-string :override #'my-org-clocktable-indent-string)
 
 ;; Lots of stuff from http://doc.norang.ca/org-mode.html
 
@@ -144,7 +156,6 @@ typical word processor."
 ;;; Agenda views
 
 (setq-default org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3))
-
 
 (let ((active-project-match "-INBOX/PROJECT"))
 

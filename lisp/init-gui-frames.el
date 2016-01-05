@@ -16,6 +16,8 @@
 (setq use-dialog-box nil)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
+(setq auto-window-vscroll nil)
+(setq ring-bell-function #'ignore)
 
 
 ;;----------------------------------------------------------------------------
