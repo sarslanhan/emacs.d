@@ -117,6 +117,7 @@
   (require 'init-spelling))
 
 (require 'init-misc)
+(require 'init-keyfreq)
 
 (require 'init-dash)
 (require 'init-ledger)
